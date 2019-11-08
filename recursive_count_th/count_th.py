@@ -4,7 +4,6 @@ Your function should return a count of how many occurences of ***"th"*** occur w
 Your function must utilize recursion. It cannot contain any loops.
 '''
 
-
 def count_th(word):
     # base case
     # if the word is less than 1, then it wont have the 2 letters we're looking for

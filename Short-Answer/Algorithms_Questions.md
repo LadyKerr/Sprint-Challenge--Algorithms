@@ -14,10 +14,10 @@ a)  a = 0
 
 ```
 b)  sum = 0
-    for i in range(n):
+    for i in range(n): #the first loop is O(n) on its own . . .
       j = 1
       while j < n:
-        j *= 2
+        j *= 2 #doubling the value of j here.....
         sum += 1
 ```
 

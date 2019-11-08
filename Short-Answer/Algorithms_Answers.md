@@ -4,7 +4,9 @@
 
 a) O(n) => Linear Time, where n represents the length of the array. As n increases, performance increases linearly since the number of operations increases with n. As such, it take linear timeto find n.
 
-b) O(n^2) => Quadratic Time, where every element is being compared to every other element. Also, nested for loops are a great indicator of quadratic time.
+b) O(n^2) => QuadratiOc Time, where every element is being compared to every other element. Also, nested for loops are a great indicator of quadratic time.
+
+====> this is O(n log n) because the second loop is doubling the value of J by multiplying J *2. If it was +=2, then it would be O(n^2).
 
 c) O(n) => Linear Time, where n represents the number of times the function is being called. This was a tricky one since recursive functions are typically Exponential Time O(2^n).
 
