@@ -95,9 +95,43 @@ class SortingRobot:
     def sort(self):
         """
         Sort the robot's list.
+        =========================
+        The robot's goal is to sort the list given.
+        Bubble Sort => robot will repeatedly swap adjacent nums if they are in the wrong order
+        not the most efficient with O(n^2) runtime
+        =========================
+        So it seems the robot is starting with an unsorted list, holding no items in its hand at position 0 - first index - with its light off.
+        The item the robot is holding represents the nums to be sorted. Once all nums are sorted, the robot wont have any more items in
+        hand and lights can be turned off and its done - sorted. Mission accomplished.
+
         """
-        # Fill this out
-        pass
+        #TODO: BUBBLE SORT - nested looping O(n^2)
+
+        #turn on the light so robot can start sorting
+        self.set_light_on()
+        #grab the first item since he starts with none
+        self.swap_item()
+        #create a while loop, with the lights on so robot can move l<->r and exchange items
+        while self.light_is_on():
+        #check if you can move to the right, if you can, move right
+            while self.can_move_right():
+                self.move_right() #start moving right to start sorting the list
+                #compare items and swap if robot is holding an item == 1
+                if self.compare_item() == 1:
+                    self.swap_item()
+        #if there are no items to compare, move on to the left
+        #exit the first loop for the right and start one for the left
+            while self.compare_item() is not None:
+                self.move_left()
+        #swap items when moved to the left
+            self.swap_item()
+        #if robot can move right again, repeat by moving right & swap items
+            if self.can_move_right():
+                self.move_right()
+                self.swap_item()
+        #if robot cant move, then turn off the light because the list is sorted
+            else:
+                self.set_light_off()
 
 
 if __name__ == "__main__":
